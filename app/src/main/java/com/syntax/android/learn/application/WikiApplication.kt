@@ -1,4 +1,3 @@
-
 package com.syntax.android.learn.application
 
 import android.app.Application

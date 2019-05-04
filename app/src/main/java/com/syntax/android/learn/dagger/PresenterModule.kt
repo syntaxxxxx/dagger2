@@ -2,6 +2,8 @@ package com.syntax.android.learn.dagger
 
 import android.app.Application
 import android.content.Context
+import com.syntax.android.learn.network.Homepage
+import com.syntax.android.learn.network.Wiki
 import com.syntax.android.learn.ui.homepage.HomepagePresenter
 import com.syntax.android.learn.ui.homepage.HomepagePresenterImpl
 import com.syntax.android.learn.ui.search.EntryPresenter
@@ -14,9 +16,9 @@ import javax.inject.Singleton
 class PresenterModule() {
     @Provides
     @Singleton
-    fun provideHomePagePresenter() : HomepagePresenter = HomepagePresenterImpl()
+    fun provideHomePagePresenter(homepage: Homepage): HomepagePresenter = HomepagePresenterImpl(homepage)
 
     @Provides
     @Singleton
-    fun provideSearchPresenter() : EntryPresenter = EntryPresenterImpl()
+    fun provideSearchPresenter(wiki: Wiki): EntryPresenter = EntryPresenterImpl(wiki)
 }
