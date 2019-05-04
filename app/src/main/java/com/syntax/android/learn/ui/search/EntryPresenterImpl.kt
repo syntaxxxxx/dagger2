@@ -39,11 +39,13 @@ import okhttp3.OkHttpClient
 import okhttp3.Response
 import java.io.IOException
 
-class EntryPresenterImpl(private var entryView: EntryView) : EntryPresenter {
+class EntryPresenterImpl : EntryPresenter {
 
   private val client: OkHttpClient = OkHttpClient()
   private val api: WikiApi = WikiApi(client)
   private val wiki: Wiki = Wiki(api)
+
+  private lateinit var entryView: EntryView
 
   override fun setView(entryView: EntryView) {
     this.entryView = entryView
