@@ -13,7 +13,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class PresenterModule() {
+class PresenterModule {
     @Provides
     @Singleton
     fun provideHomePagePresenter(homepage: Homepage): HomepagePresenter = HomepagePresenterImpl(homepage)

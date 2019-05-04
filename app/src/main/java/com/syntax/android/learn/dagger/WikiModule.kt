@@ -17,5 +17,4 @@ class WikiModule {
     @Provides
     @Singleton
     fun provideWiki(api: WikiApi) = Wiki(api)
-
 }
